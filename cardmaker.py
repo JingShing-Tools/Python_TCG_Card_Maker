@@ -48,16 +48,16 @@ def datawindow():
     com5.pack()
     com5['value'] = (['N','R','SR','SSR','UR','IE'])
     com5.current(0)
-    def ling(eve):
+    def card_cost_1_func(eve):
         global card_cost_1
         card_cost_1 = com1.get()
-    def yao(eve):
+    def card_cost_2_func(eve):
         global card_cost_2
         card_cost_2 = com2.get()
-    def xy(eve):
+    def card_level_func(eve):
         global card_level
         card_level = com3.get()
-    def rar(eve):
+    def rarity(eve):
         global rare
         rare = com5.get()
     CLASS=StringVar()
@@ -69,17 +69,17 @@ def datawindow():
             time.sleep(0.1)
             if '生物--' in classes:
                 classes = '生物--' + classinput.get()
-    def clas(eve):
+    def card_class(eve):
         global classes
         if com4.get() == '生物--種類':
             classes = '生物--'
         else:
             classes = com4.get()
-    com1.bind('<<ComboboxSelected>>', ling)
-    com2.bind('<<ComboboxSelected>>', yao)
-    com3.bind('<<ComboboxSelected>>', xy)
-    com4.bind('<<ComboboxSelected>>', clas)
-    com5.bind('<<ComboboxSelected>>', rar)
+    com1.bind('<<ComboboxSelected>>', card_cost_1_func)
+    com2.bind('<<ComboboxSelected>>', card_cost_2_func)
+    com3.bind('<<ComboboxSelected>>', card_level_func)
+    com4.bind('<<ComboboxSelected>>', card_class)
+    com5.bind('<<ComboboxSelected>>', rarity)
     def savecard():
         global issave
         issave = 1
