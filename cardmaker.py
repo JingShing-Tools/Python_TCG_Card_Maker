@@ -48,16 +48,16 @@ def datawindow():
     com5.pack()
     com5['value'] = (['N','R','SR','SSR','UR','IE'])
     com5.current(0)
-    def card_cost_1_func():
+    def card_cost_1_func(none):
         global card_cost_1
         card_cost_1 = com1.get()
-    def card_cost_2_func():
+    def card_cost_2_func(none):
         global card_cost_2
         card_cost_2 = com2.get()
-    def card_level_func():
+    def card_level_func(none):
         global card_level
         card_level = com3.get()
-    def rarity():
+    def rarity(none):
         global rare
         rare = com5.get()
     CLASS=StringVar()
@@ -69,7 +69,7 @@ def datawindow():
             time.sleep(0.1)
             if '生物--' in classes:
                 classes = '生物--' + classinput.get()
-    def card_class():
+    def card_class(none):
         global classes
         if com4.get() == '生物--種類':
             classes = '生物--'
